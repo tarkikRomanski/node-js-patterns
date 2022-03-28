@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/tarkikRomanski/node-js-patterns#readme",
   "dependencies": {
+    "axios": "^0.26.1",
     "express": "^4.17.3",
+    "node-fetch": "2.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {
