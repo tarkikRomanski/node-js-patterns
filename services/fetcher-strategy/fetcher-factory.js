@@ -1,13 +1,15 @@
-const axiosStrategy = require('./axios-strategy')
-const fetchStrategy = require('./fetch-strategy')
+const AxiosStrategy = require('./axios-strategy')
+const FetchStrategy = require('./fetch-strategy')
 
-const strategies = [
-  axiosStrategy,
-  fetchStrategy,
-]
+class FetcherFactory {
+  strategies = [
+    new AxiosStrategy('2103c2f0'),
+    new FetchStrategy('2103c2f0'),
+  ]
 
-module.exports = {
   get(fetcher) {
-    return strategies.find((item) => item.support(fetcher))
+    return this.strategies.find((item) => item.support(fetcher))
   }
 }
+
+module.exports = new FetcherFactory()
